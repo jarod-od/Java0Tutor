@@ -17,6 +17,9 @@ public class Main {
                 Scanner s = new Scanner(System.in);
                 k = s.nextInt();
                 p = s.nextInt();
+                if (k >= 10 || p >= 10) {
+                    throw new Exception();
+                }
                 System.out.println("k = " + k + ", p = " + p);
                 break;
             } catch (Exception e) {
