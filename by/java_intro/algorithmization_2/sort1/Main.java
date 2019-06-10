@@ -18,7 +18,7 @@ public class Main {
         int k;
         while (true) {
             try {
-                System.out.println("Input k ( < 10, > 0): ");
+                System.out.println("Input k ( < 20, > 0): ");
                 Scanner s = new Scanner(System.in);
                 k = s.nextInt();
                 if (k >= 10 || k <= 0) {
@@ -33,8 +33,9 @@ public class Main {
         
         int[] a = new int[N];
         int[] b = new int[M];
+        int[] c = new int[M + N];
         
-        for (int i = 0; i < a.length / 2; i++) {
+        for (int i = 0; i < a.length; i++) {
             a[i] = (int)(Math.random() * 100);
         }
 
@@ -42,29 +43,33 @@ public class Main {
             b[i] = (int)(Math.random() * 100);
         }
 
-        System.out.println("Matrix A: ");
-        for (int i = 0; i < a.length / 2; i++) {
+        System.out.println("Seq A: ");
+        for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + "  ");
         }
         System.out.println();
 
-        System.out.println("Matrix B: ");
+        System.out.println("Seq B: ");
         for (int i = 0; i < b.length; i++) {
             System.out.print(b[i] + "  ");
         }
         System.out.println();
 
-        for(int i = k + 1, j = k + 1 + b.length; i < a.length / 2; i++, j++) {
-            a[j] = a[i];
+        for(int i = 0; i < a.length; i++) {
+            if(i <= k) {
+                c[i] = a[i];
+            } else {
+                c[i + b.length] = a[i];
+            }
         }
 
-        for(int i = k + 1, j = 0; j < b.length; i++, j++) {
-            a[i] = b[j];
+        for(int i = 0; i < b.length; i++) {
+            c[k + i + 1] = b[i];
         }
 
-        System.out.println("New matrix A: ");
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + "  ");
+        System.out.println("Seq C: ");
+        for (int i = 0; i < c.length; i++) {
+            System.out.print(c[i] + "  ");
         }
         System.out.println();
 
