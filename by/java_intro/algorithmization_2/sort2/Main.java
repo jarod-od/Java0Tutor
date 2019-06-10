@@ -14,9 +14,10 @@ public class Main {
         
         int[] a = new int[N];
         int[] b = new int[M];
+        int[] c = new int[M + N];
         
         int shift = 0;
-        for (int i = 0; i < a.length / 2; i++) {
+        for (int i = 0; i < a.length; i++) {
             a[i] = (int)(Math.random() * 10 + 1) + shift;
             shift = a[i];
         }
@@ -27,32 +28,32 @@ public class Main {
             shift = b[i];
         }
 
-        System.out.println("Matrix A: ");
-        for (int i = 0; i < a.length / 2; i++) {
+        System.out.println("Seq A: ");
+        for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + "  ");
         }
         System.out.println();
 
-        System.out.println("Matrix B: ");
+        System.out.println("Seq B: ");
         for (int i = 0; i < b.length; i++) {
             System.out.print(b[i] + "  ");
         }
         System.out.println();
 
-        int indexA = a.length / 2 - 1;
-        int indexB = b.length - 1;
-        int newIndex = a.length - 1;
-        while(indexA != newIndex) {
-            if(a[indexA] > b[indexB]) {
-                a[newIndex--] = a[indexA--];
+        int indexA = 0;
+        int indexB = 0;
+        int newIndex = 0;
+        while(newIndex < c.length) {
+            if(indexB == b.length || a[indexA] < b[indexB]) {
+                c[newIndex++] = a[indexA++];
             } else {
-                a[newIndex--] = b[indexB--];
+                c[newIndex++] = b[indexB++];
             }
         }
 
-        System.out.println("New matrix A: ");
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + "  ");
+        System.out.println("Seq C: ");
+        for (int i = 0; i < c.length; i++) {
+            System.out.print(c[i] + "  ");
         }
         System.out.println();
 
