@@ -35,20 +35,19 @@ public class Main {
 
             if (isMagic(a)) {
                 isFound = true;
-                break;
+                System.out.println("Magic matrix: ");
+                for (int i = 0; i < a.length; i++) {
+                    for (int j = 0; j < a[i].length; j++) {
+                        System.out.print(a[i][j] + "  ");
+                    }
+                    System.out.println();
+                }
+                //break;
             }
 
         } while (getNextPermutation(nums));
         
-        if (isFound) {
-            System.out.println("Magic matrix: ");
-            for (int i = 0; i < a.length; i++) {
-                for (int j = 0; j < a[i].length; j++) {
-                    System.out.print(a[i][j] + "  ");
-                }
-                System.out.println();
-            }
-        } else {
+        if (!isFound) {
             System.out.println("Magic matrix not found");
         }
     }
