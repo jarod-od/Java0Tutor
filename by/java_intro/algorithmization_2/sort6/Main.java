@@ -28,7 +28,7 @@ public class Main {
 
         //чего-то в описании не хватает, добавил цикл и получилась пузырьковая сортировка 
         for (int j = 0; j < a.length; j++) {
-            int i = 0;
+            int i = a.length / 2;
             while (i < a.length - 1) {
                 if (a[i] <= a[i + 1]) {
                     i++;
@@ -36,6 +36,7 @@ public class Main {
                     int t = a[i];
                     a[i] = a[i + 1];
                     a[i + 1] = t;
+                    i--;
                 }
             }
         }
