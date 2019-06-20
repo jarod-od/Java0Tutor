@@ -12,7 +12,7 @@ public class Main {
 
         int c = getDigitsCount(line);
 
-        System.out.println("Disgints count: " + c);
+        System.out.println("Digits count: " + c);
     }
 
     public static int getDigitsCount(char[] source) {
