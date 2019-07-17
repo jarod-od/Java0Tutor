@@ -18,7 +18,7 @@ public class Train {
     private LocalTime arrivalTime;
     
     public Train(String destinationName, int trainNumber, LocalTime arrivalTime) {
-        this.destinationName = destinationName;
+        this.destinationName = new String(destinationName);
         this.trainNumber = trainNumber;
         this.arrivalTime = arrivalTime;
     }
@@ -92,6 +92,7 @@ public class Train {
             trainsDest[i] = trains[i].destinationName;
         }
         Arrays.sort(trainsDest);
+        /*
         String oldDest = null;
         int passCount = 0;
         for (int i = 0; i < trainsDest.length; i++) {
@@ -114,6 +115,14 @@ public class Train {
                 }
             }
             oldDest = trainsDest[i];
+        }
+        */
+        for (int i = 0; i < trainsDest.length; i++) {
+            for (int t = 0; t < trains.length; t++) {
+                if (trainsDest[i] == trains[t].destinationName) {
+                    sortedTrains[i] = trains[t];
+                }
+            }
         }
         printTrainsList(sortedTrains);
     }
@@ -184,7 +193,7 @@ public class Train {
         trains[1] = new Train("Minsk", 13, LocalTime.parse("10:55"));
         trains[2] = new Train("Moscow", 234, LocalTime.parse("10:35"));
         trains[3] = new Train("Paris", 2, LocalTime.parse("10:45"));
-        trains[4] = new Train("Minsk", 5, LocalTime.parse("10:25"));
+        trains[4] = new Train("Minsk", 5, LocalTime.parse("10:45"));
         return trains;
     }
 }
