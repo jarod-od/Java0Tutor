@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<student_files>
+    <student_file>
+        <surname>surname1</surname>
+        <lastname>lastname1</lastname>
+        <groupId>1</groupId>
+    </student_file>
+    <student_file>
+        <surname>surname2</surname>
+        <lastname>lastname2</lastname>
+        <groupId>2</groupId>
+    </student_file>
+    <student_file>
+        <surname>surname3</surname>
+        <lastname>lastname3</lastname>
+        <groupId>3</groupId>
+    </student_file>
+    <student_file>
+        <surname>surname4</surname>
+        <lastname>lastname4</lastname>
+        <groupId>4</groupId>
+    </student_file>
+</student_files>
