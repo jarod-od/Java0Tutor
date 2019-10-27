@@ -5,4 +5,10 @@ public class VoucherType {
     public VoucherType(String type) {
         this.type = type;
     }
+
+
+    public String getType() {
+        return this.type;
+    }
+
 }
