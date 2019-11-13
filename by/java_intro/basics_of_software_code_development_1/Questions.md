@@ -163,8 +163,8 @@
   for (int i = 0; i < 10; i++) {
     a++;
   }
-  List<Integer> I = new ArrayList<>();
-  for(int i : I) {
+  int array = new int[] {1, 2, 3};
+  for(int i : array) {
     a = i;
   }
   </code></pre>
