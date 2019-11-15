@@ -70,5 +70,21 @@
   </code></pre>
   Код выше подсчитывает количество вхождений строки "ab" в "abasdfabasdfabdsfaab".
 
+  3.   Что такое группы в регулярных выражениях? Как нумеруются группы? Что представляет собой группа номер 0(ноль)? Приведите пример с использованием групп регулярного выражения. 
+  <br/>Ответ:<br/>
+  Группа - это пронумерованная часть регулярного выражения. Группы нумеруются по порядку следования начиная с 1. Группа 0 относится ко всему выражению.
+  <pre><code>
+  java.util.regex.Pattern p = java.util.regex.Pattern.compile("(.)(ab)(.)");
+  java.util.regex.Matcher m = p.matcher("abasdfabasdfabdsfaabertert");
+  int count = 0;
+  StringBuffer sb = new StringBuffer();
+  while(m.find()) {
+      m.appendReplacement(sb, "[$2]");
+  }
+  m.appendTail(sb);
+  </code></pre>
+  Код выше находит строку "ab", имеющую по краям символы, и заменяет их на квадратные скобки.
+
+
 
 
